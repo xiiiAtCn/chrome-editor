@@ -1,7 +1,6 @@
 /** @format */
 
 import { Block, ContentState as State, ISearchOption } from "@/typings/muya";
-import "../themes/default.css";
 import "./assets/styles/index.css";
 import { CLASS_OR_ID, MUYA_DEFAULT_OPTION } from "./config";
 import ContentState from "./contentState";

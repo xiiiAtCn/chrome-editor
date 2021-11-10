@@ -1,5 +1,6 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Muya, { IOption } from "../muya/lib";
+import "../muya/lib/assets/styles/index.css";
 import "../muya/lib/assets/theme/default.less";
 import { MUYA_DEFAULT_OPTION } from "../muya/lib/config";
 import CodePicker from "../muya/lib/ui/codePicker";
@@ -17,7 +18,6 @@ import TableBarTools from "../muya/lib/ui/tableTools";
 import Transformer from "../muya/lib/ui/transformer";
 
 Muya.use(TablePicker);
-
 Muya.use(QuickInsert);
 Muya.use(CodePicker);
 Muya.use(EmojiPicker);
@@ -46,7 +46,10 @@ const Editor = () => {
     {},
     MUYA_DEFAULT_OPTION
   ) as any as IOption;
-  const editor = new Muya(editorRef.current!, option);
+
+  useEffect(() => {
+    const editor = new Muya(editorRef.current!, option);
+  });
 
   return (
     <div
@@ -64,7 +67,11 @@ const Editor = () => {
           : "translate3D(100%, 0, 0)",
       }}
     >
-      <div ref={editorRef}></div>
+      <button onClick={toggle}>切换</button>
+      <div
+        style={{ height: "100vh", margin: "20px 30px" }}
+        ref={editorRef}
+      ></div>
     </div>
   );
 };

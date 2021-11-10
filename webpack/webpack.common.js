@@ -43,15 +43,7 @@ module.exports = {
       },
       {
         test: /\.ttf$|.woff(2?)|\.png|\.svg$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[hash:10].[ext]",
-              outputPath: "static/assets/",
-            },
-          },
-        ],
+        type: "asset/inline",
       },
       {
         test: /\.less$/,
@@ -60,6 +52,9 @@ module.exports = {
           isProduction
             ? {
                 loader: MiniCssExtractPlugin.loader,
+                options: {
+                  publicPath: "/",
+                },
               }
             : {
                 loader: "style-loader",
@@ -96,5 +91,8 @@ module.exports = {
       options: {},
     }),
     new MiniCssExtractPlugin(),
+    new webpack.ProvidePlugin({
+      process: "process/browser",
+    }),
   ],
 };
