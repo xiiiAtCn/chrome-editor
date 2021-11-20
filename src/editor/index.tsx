@@ -61,7 +61,7 @@ const Editor = () => {
         bottom: 0,
         zIndex: 9999,
         transition: "0.3s",
-        background: "pink",
+        background: "#fff",
         transform: showEditor
           ? "translate3D(0, 0, 0)"
           : "translate3D(100%, 0, 0)",
@@ -69,7 +69,13 @@ const Editor = () => {
     >
       <button onClick={toggle}>切换</button>
       <div
-        style={{ height: "100vh", margin: "20px 30px" }}
+        style={{
+          height: "calc(100vh - 50px)",
+          padding: "20px 30px",
+          outline: "none",
+          margin: "auto 10px",
+          background: "rgba(0,0,0,0.03)",
+        }}
         ref={editorRef}
       ></div>
     </div>

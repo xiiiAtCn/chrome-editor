@@ -23,7 +23,7 @@
     "dompurify": "^2.3.3",
     "element-resize-detector": "^1.2.3",
     "execall": "^3.0.0",
-    "file-icons-js": "^1.1.0",
+    "file-icons-js": "1.0.3",
     "file-loader": "^6.2.0",
     "flowchart.js": "^1.17.0",
     "fuzzaldrin": "^2.1.0",
